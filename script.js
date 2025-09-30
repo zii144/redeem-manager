@@ -5,6 +5,7 @@ const successModal = document.getElementById("successModal");
 const errorModal = document.getElementById("errorModal");
 const termsModal = document.getElementById("termsModal");
 const privacyModal = document.getElementById("privacyModal");
+const welcomeBanner = document.getElementById("welcomeBanner");
 const successCode = document.getElementById("successCode");
 const successTime = document.getElementById("successTime");
 const errorMessage = document.getElementById("errorMessage");
@@ -59,6 +60,7 @@ const validationRules = {
 document.addEventListener("DOMContentLoaded", function () {
   initializeForm();
   setupEventListeners();
+  showWelcomeBanner();
 });
 
 // Initialize form
@@ -289,6 +291,32 @@ function openTermsModal() {
 function openPrivacyModal() {
   privacyModal.style.display = "block";
   document.body.style.overflow = "hidden";
+}
+
+// Show welcome banner
+function showWelcomeBanner() {
+  // Check if user has seen the banner before
+  const hasSeenBanner = localStorage.getItem("hasSeenWelcomeBanner");
+
+  if (!hasSeenBanner) {
+    welcomeBanner.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+}
+
+// Close welcome banner
+function closeWelcomeBanner() {
+  welcomeBanner.style.display = "none";
+  document.body.style.overflow = "auto";
+
+  // Mark that user has seen the banner
+  localStorage.setItem("hasSeenWelcomeBanner", "true");
+
+  // Optional: Add a smooth transition effect
+  welcomeBanner.style.animation = "bannerFadeOut 0.3s ease";
+  setTimeout(() => {
+    welcomeBanner.style.display = "none";
+  }, 300);
 }
 
 // Generate mock redeem code
