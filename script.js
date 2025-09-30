@@ -126,7 +126,7 @@ async function handleFormSubmit(event) {
     if (isSuccess) {
       showSuccessModal(data);
     } else {
-      showErrorModal("兌換碼無效或已過期，請檢查後重試");
+      showErrorModal("資料有誤，請確認您的身份資訊是否與 Bike-Life 帳戶一致");
     }
   } catch (error) {
     console.error("Redeem error:", error);

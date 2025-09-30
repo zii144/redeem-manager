@@ -46,7 +46,7 @@ body {
 
 .logo i {
     font-size: 2.5rem;
-    color: #667eea;
+    color: #2c2c2c;
 }
 
 .logo h1 {
@@ -87,7 +87,7 @@ body {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, #2c2c2c, #4a4a4a);
 }
 
 .card-header {
@@ -105,7 +105,7 @@ body {
 }
 
 .card-header i {
-    color: #667eea;
+    color: #2c2c2c;
 }
 
 /* Form Styles */
@@ -130,7 +130,7 @@ body {
 }
 
 .form-label i {
-    color: #667eea;
+    color: #2c2c2c;
     width: 16px;
 }
 
@@ -146,9 +146,9 @@ body {
 
 .form-input:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #2c2c2c;
     background: white;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 3px rgba(44, 44, 44, 0.1);
 }
 
 .form-input.error {
@@ -178,11 +178,11 @@ body {
     background: #f8f9fa;
     padding: 8px 12px;
     border-radius: 6px;
-    border-left: 3px solid #667eea;
+    border-left: 3px solid #2c2c2c;
 }
 
 .field-help i {
-    color: #667eea;
+    color: #2c2c2c;
     font-size: 0.9rem;
 }
 
@@ -218,8 +218,8 @@ body {
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
-    background: #667eea;
-    border-color: #667eea;
+    background: #2c2c2c;
+    border-color: #2c2c2c;
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
@@ -230,7 +230,7 @@ body {
 }
 
 .terms-link {
-    color: #667eea;
+    color: #2c2c2c;
     text-decoration: none;
     font-weight: 500;
 }
@@ -241,7 +241,7 @@ body {
 
 /* Submit Button */
 .submit-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
     color: white;
     border: none;
     padding: 18px 30px;
@@ -259,7 +259,7 @@ body {
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 25px rgba(44, 44, 44, 0.3);
 }
 
 .submit-btn:active {
@@ -329,7 +329,7 @@ body {
     font-weight: 600;
     margin-bottom: 15px;
     padding-left: 10px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #2c2c2c;
 }
 
 .terms-section p, .privacy-section p {
@@ -502,12 +502,12 @@ body {
 }
 
 .btn-primary {
-    background: #667eea;
+    background: #2c2c2c;
     color: white;
 }
 
 .btn-primary:hover {
-    background: #5a6fd8;
+    background: #1a1a1a;
 }
 
 .btn-secondary {
