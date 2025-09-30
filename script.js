@@ -23,12 +23,31 @@ const validationRules = {
     pattern: /^[a-zA-Z0-9\u4e00-\u9fff_-]+$/,
     message: "使用者名稱只能包含中英文、數字、底線和連字號，長度2-50字元",
   },
-  redeemCode: {
+  birthDate: {
     required: true,
-    minLength: 6,
-    maxLength: 20,
-    pattern: /^[A-Z0-9-]+$/,
-    message: "兌換碼格式不正確，只能包含大寫字母、數字和連字號，長度6-20字元",
+    message: "請選擇您的出生年月",
+    validate: function (value) {
+      if (!value) return false;
+
+      const selectedDate = new Date(value);
+      const currentDate = new Date();
+      const minDate = new Date(1900, 0, 1);
+      const maxDate = new Date(
+        currentDate.getFullYear() - 13,
+        currentDate.getMonth(),
+        currentDate.getDate()
+      ); // At least 13 years old
+
+      if (selectedDate < minDate) {
+        return { valid: false, message: "出生年月不能早於1900年" };
+      }
+
+      if (selectedDate > maxDate) {
+        return { valid: false, message: "您必須年滿13歲才能使用此服務" };
+      }
+
+      return { valid: true };
+    },
   },
   terms: {
     required: true,
@@ -161,6 +180,20 @@ function validateField(input) {
       errorMsg = rules.message;
     }
     if (rules.maxLength && value.length > rules.maxLength) {
+      isValid = false;
+      errorMsg = rules.message;
+    }
+  }
+
+  // Custom validation function
+  if (isValid && value && rules.validate) {
+    const validationResult = rules.validate(value);
+    if (typeof validationResult === "object") {
+      isValid = validationResult.valid;
+      if (!isValid) {
+        errorMsg = validationResult.message || rules.message;
+      }
+    } else if (!validationResult) {
       isValid = false;
       errorMsg = rules.message;
     }
